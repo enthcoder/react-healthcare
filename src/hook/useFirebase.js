@@ -94,6 +94,7 @@ const useFirebase = () => {
         isLoading,
         handleRegister,
         handleLoginUsingEmailPassword,
+        handleGoogleSignIn,
         handleSignOut,
     };
 };
