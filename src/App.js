@@ -7,10 +7,11 @@ import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
 import ServiceDetails from "./components/ServiceDetails/ServiceDetails";
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
     return (
-        <div className="">
+        <AuthProvider>
             <Router>
                 <Header></Header>
                 <Switch>
@@ -35,7 +36,7 @@ function App() {
                 </Switch>
                 <Footer></Footer>
             </Router>
-        </div>
+        </AuthProvider>
     );
 }
 
