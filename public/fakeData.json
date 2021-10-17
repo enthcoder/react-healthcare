@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service1",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service2",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service3",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service4",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service5",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/YLPTVkm/Healthcare-business-graph-and-Medical-examination-and-businessman-analyzing-data-and-growth-chart-on.jpg",
+        "name": "Service6",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, minus!"
+    }
+]
