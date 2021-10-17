@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="pt-5 mx-auto row row-cols-1 row-cols-md-4 row-cols-lg-4">
                     <div className="col">
                         <img src={brandLogo} alt="" width="30" height="30" />
-                        <span> Medicure</span>
+                        <span className="fw-bold"> Medicure</span>
                         <p className="mt-2">
                             <small>
                                 Medicure provides progressive, and affordable
@@ -25,7 +25,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col">
-                        <span>Company</span>
+                        <span className="fw-bold">Company</span>
                         <ul className="mt-2 list">
                             <li>About</li>
                             <li>Reports</li>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="col">
-                        <span>District</span>
+                        <span className="fw-bold">District</span>
                         <ul className="mt-2 list">
                             <li>Chittagong</li>
                             <li>Dhaka</li>
@@ -46,7 +46,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="col">
-                        <span>Help</span>
+                        <span className="fw-bold">Help</span>
                         <ul className="mt-2 list">
                             <li>Help Center</li>
                             <li>Contact support</li>

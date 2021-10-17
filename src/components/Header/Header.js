@@ -16,8 +16,8 @@ const Header = () => {
                         width="30"
                         height="30"
                         className="align-top d-inline-block"
-                    />{" "}
-                    Medicure
+                    />
+                    <span className="fw-bold"> Medicure</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

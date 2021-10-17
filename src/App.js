@@ -27,12 +27,12 @@ function App() {
                     <PrivateRoute path="/details/:id">
                         <ServiceDetails></ServiceDetails>
                     </PrivateRoute>
-                    <Route exact path="/covid">
+                    <PrivateRoute exact path="/covid">
                         <CovidPortal></CovidPortal>
-                    </Route>
-                    <Route exact path="/about">
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/about">
                         <About></About>
-                    </Route>
+                    </PrivateRoute>
                     <Route exact path="/login">
                         <Login></Login>
                     </Route>
