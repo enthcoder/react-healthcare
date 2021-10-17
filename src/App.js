@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./components/About/About";
+import CovidPortal from "./components/CovidPortal/CovidPortal";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -23,6 +25,12 @@ function App() {
                     </Route>
                     <Route path="/details/:id">
                         <ServiceDetails></ServiceDetails>
+                    </Route>
+                    <Route exact path="/covid">
+                        <CovidPortal></CovidPortal>
+                    </Route>
+                    <Route exact path="/about">
+                        <About></About>
                     </Route>
                     <Route exact path="/login">
                         <Login></Login>
