@@ -3,6 +3,8 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
     signOut,
 } from "firebase/auth";
 
@@ -46,6 +48,21 @@ const useFirebase = () => {
             });
     };
 
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                setUser(result.user);
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    };
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -73,6 +90,8 @@ const useFirebase = () => {
 
     return {
         user,
+        error,
+        isLoading,
         handleRegister,
         handleLoginUsingEmailPassword,
         handleSignOut,
