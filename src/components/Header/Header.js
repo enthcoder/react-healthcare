@@ -6,7 +6,7 @@ import brandLogo from "../../images/brand-logo.png";
 
 const Header = () => {
     const { user, handleSignOut } = useAuth();
-    console.log(user);
+    //console.log(user);
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -38,7 +38,7 @@ const Header = () => {
                             About Us
                         </Nav.Link>
 
-                        {!user.email ? (
+                        {!user.displayName ? (
                             <Nav.Link as={NavLink} to="/login">
                                 Login
                             </Nav.Link>
@@ -57,7 +57,7 @@ const Header = () => {
                             </Nav.Link>
                         )}
 
-                        {user.email && (
+                        {user.displayName && (
                             <Navbar.Text>
                                 <span>{user?.displayName} </span>
                                 <img

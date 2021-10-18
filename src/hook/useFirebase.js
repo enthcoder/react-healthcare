@@ -21,11 +21,13 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const handleRegister = (email, password) => {
+    const handleRegister = (name, email, password) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
+                setError("");
+                updateInfo(name);
             })
             .catch((error) => {
                 setError(error.message);
@@ -38,6 +40,8 @@ const useFirebase = () => {
     const updateInfo = (name) => {
         updateProfile(auth.currentUser, {
             displayName: name,
+        }).then(() => {
+            // Profile updated!
         });
     };
 
@@ -46,6 +50,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
+                setError("");
             })
             .catch((error) => {
                 setError(error.message);
@@ -61,6 +66,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
+                setError("");
             })
             .catch((error) => {
                 setError(error.message);
@@ -73,6 +79,7 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
+                console.log(user);
                 setUser(user);
             } else {
                 setUser({});
@@ -86,6 +93,7 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setUser({});
+                setError("");
             })
             .catch((error) => {
                 setError(error.message);
@@ -98,6 +106,7 @@ const useFirebase = () => {
     return {
         user,
         error,
+        setError,
         isLoading,
         handleRegister,
         updateInfo,

@@ -9,10 +9,7 @@ import useAuth from "../../hook/useAuth";
 import registerImg from "../../images/register-pana.svg";
 
 const Register = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [pass, setPass] = useState("");
-    const { handleRegister, handleGoogleSignIn, updateInfo } = useAuth();
+    const { error, setError, handleRegister, handleGoogleSignIn } = useAuth();
 
     const {
         register,
@@ -20,15 +17,14 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        setName(data.Name);
-        setEmail(data.Email);
-        setPass(data.Password);
-    };
-
-    const handleRegistration = () => {
-        handleRegister(email, pass);
-        // updateInfo(name);
+    const onSubmit = (data, e) => {
+        console.log(data);
+        if (data.Password.length < 6)
+            setError("Password should be at least 6 characters long!");
+        else {
+            handleRegister(data.Name, data.Email, data.Password);
+            e.target.reset();
+        }
     };
 
     return (
@@ -40,6 +36,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faUser} />
                         </span>
                     </div>
+
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <InputGroup className="mb-3">
                             <InputGroup.Text className="border-0 bg-light">
@@ -53,6 +50,7 @@ const Register = () => {
                                 placeholder="Name"
                             />
                         </InputGroup>
+
                         <InputGroup className="mb-3">
                             <InputGroup.Text className="border-0 bg-light">
                                 <FontAwesomeIcon icon={faUserAlt} />
@@ -70,11 +68,13 @@ const Register = () => {
                                 Email is required!
                             </span>
                         )}
+
                         <InputGroup className="mb-3">
                             <InputGroup.Text className="border-0 bg-light">
                                 <FontAwesomeIcon icon={faLock} />
                             </InputGroup.Text>
                             <input
+                                type="password"
                                 {...register("Password", {
                                     required: true,
                                 })}
@@ -91,15 +91,14 @@ const Register = () => {
                             Already have an account?{" "}
                             <Link to="/login">Go to Login Page</Link>
                         </p>
+                        <span className="text-danger">{error}</span>
                         <div className="mt-2 d-flex justify-content-center">
-                            <input
-                                onClick={handleRegistration}
-                                type="submit"
-                                value="Register"
-                                className="px-5 btn btn-primary"
-                            />
+                            <button className="px-5 btn btn-primary">
+                                Register
+                            </button>
                         </div>
                     </form>
+
                     <div className="mt-3 text-center">
                         <p>Or Sign Up Using</p>
                         <img

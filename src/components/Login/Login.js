@@ -10,9 +10,8 @@ import loginImg from "../../images/Mobile login-rafiki.svg";
 import "./Login.css";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [pass, setPass] = useState("");
-    const { handleLoginUsingEmailPassword, handleGoogleSignIn } = useAuth();
+    const { error, handleLoginUsingEmailPassword, handleGoogleSignIn } =
+        useAuth();
 
     const {
         register,
@@ -20,14 +19,10 @@ const Login = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        setEmail(data.Email);
-        setPass(data.Password);
-        // console.log(data);
-    };
-
-    const handleLogin = () => {
-        handleLoginUsingEmailPassword(email, pass);
+    const onSubmit = (data, e) => {
+        console.log(data);
+        handleLoginUsingEmailPassword(data.Email, data.Password);
+        if (!error.length) e.target.reset();
     };
 
     return (
@@ -62,6 +57,7 @@ const Login = () => {
                                 <FontAwesomeIcon icon={faLock} />
                             </InputGroup.Text>
                             <input
+                                type="password"
                                 {...register("Password", {
                                     required: true,
                                 })}
@@ -81,17 +77,15 @@ const Login = () => {
                             New User?{" "}
                             <Link to="/register">Create an Account</Link>
                         </p>
+                        <span className="text-danger">{error}</span>
                         <div className="mt-2 d-flex justify-content-center">
-                            <input
-                                onClick={handleLogin}
-                                type="submit"
-                                value="Login"
-                                className="px-5 btn btn-primary"
-                            />
+                            <button className="px-5 btn btn-primary">
+                                Login
+                            </button>
                         </div>
                     </form>
                     <div className="mt-3 text-center">
-                        <p>Or Sign Up Using</p>
+                        <p>Or Sign In Using</p>
                         <img
                             onClick={handleGoogleSignIn}
                             src="https://i.ibb.co/d7hrH3F/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
