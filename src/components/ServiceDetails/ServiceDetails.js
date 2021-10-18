@@ -8,7 +8,7 @@ const ServiceDetails = () => {
 
     const { id } = useParams();
 
-    const service = services.find((sv) => sv.id === id.toString());
+    const service = services.find((sv) => sv.id.toString() === id);
 
     return (
         <Container>
