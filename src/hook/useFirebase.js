@@ -6,6 +6,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signOut,
+    updateProfile,
 } from "firebase/auth";
 
 import { useEffect, useState } from "react";
@@ -32,6 +33,12 @@ const useFirebase = () => {
             .finally(() => {
                 setIsLoading(false);
             });
+    };
+
+    const updateInfo = (name) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,
+        });
     };
 
     const handleLoginUsingEmailPassword = (email, password) => {
@@ -93,6 +100,7 @@ const useFirebase = () => {
         error,
         isLoading,
         handleRegister,
+        updateInfo,
         handleLoginUsingEmailPassword,
         handleGoogleSignIn,
         handleSignOut,
