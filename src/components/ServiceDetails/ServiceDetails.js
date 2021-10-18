@@ -19,8 +19,12 @@ const ServiceDetails = () => {
                     </Col>
                     <Col>
                         <Card.Body>
-                            <Card.Title>{service?.name}</Card.Title>
-                            <Card.Text>{service?.description}</Card.Text>
+                            <Card.Title className="fw-bold">
+                                {service?.name}
+                            </Card.Title>
+                            <Card.Text className="text-secondary">
+                                {service?.description}
+                            </Card.Text>
                         </Card.Body>
                         <Link to="/home">
                             <Button variant="dark">Back to Home</Button>

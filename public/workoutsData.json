@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Working out",
+        "img": "https://i.ibb.co/KqFWmLf/happy-man-exercising-park-113065-39.jpg",
+        "desc": "Running can significantly improve physical and mental health. Running can reduce stress, improve heart health, and even help alleviate symptoms of depression."
+    },
+    {
+        "id": 2,
+        "name": "Meditation",
+        "img": "https://i.ibb.co/Dr7PLPk/organic-flat-people-meditating-illustration-23-2148906557.jpg",
+        "desc": "The mental health benefits of meditation include better focus and concentration, improved self-awareness, lower levels of stress and anxiety."
+    },
+    {
+        "id": 3,
+        "name": "Indoor bike",
+        "img": "https://i.ibb.co/HrG9PdT/man-stationary-bike-sports-workout-home-gym-rehabilitation-sport-exercise-106796-911.jpg",
+        "desc": "Riding a stationary exercise bike is an efficient and effective way to burn calories and body fat while strengthening your heart, lungs, and muscles."
+    },
+    {
+        "id": 4,
+        "name": "Yoga",
+        "img": "https://i.ibb.co/v4zxKdt/mother-daughter-doing-fitness-outdoors-74855-5893.jpg",
+        "desc": "Yoga combines breathing exercises, meditation and poses proven to benefit mental and physical health."
+    }
+]

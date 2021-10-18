@@ -8,8 +8,10 @@ const Service = ({ service }) => {
             <Card className="border-0 shadow h-100">
                 <Card.Img variant="top" src={service.img} height="180" />
                 <Card.Body className="p-2">
-                    <Card.Title>{service.name}</Card.Title>
-                    <Card.Text>{service.description}</Card.Text>
+                    <Card.Title className="fw-bold">{service.name}</Card.Title>
+                    <Card.Text className="text-secondary">
+                        {service.description}
+                    </Card.Text>
                 </Card.Body>
                 <Card.Footer>
                     <Link to={`/details/${service.id}`}>
