@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faLock, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";

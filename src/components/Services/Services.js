@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import useServices from "../../hook/useServices";
 import Service from "../Service/Service";
 
 const Services = () => {
-    const [services, setServices] = useServices();
+    const [services] = useServices();
 
     return (
         <div className="text-center">

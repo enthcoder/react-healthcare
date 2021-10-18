@@ -10,7 +10,7 @@ const Workouts = () => {
         <div className="mt-5 text-center">
             <h1 className="fw-bold">Everyday Workouts</h1>
             <hr className="mx-auto w-25" />
-            <p class="text-secondary w-75 mx-auto">
+            <p className="mx-auto text-secondary w-75">
                 <small>
                     Regular physical activity can improve your muscle strength
                     and boost your endurance. Exercise delivers oxygen and

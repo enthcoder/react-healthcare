@@ -11,7 +11,7 @@ const Banner = () => {
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
                             <h1 className="fw-bold">Discover Top Doctors</h1>
-                            <p class="text-secondary">
+                            <p className="text-secondary">
                                 Choose your doctor from thousands of specialist,
                                 general, and trusted hospitals.
                             </p>
@@ -30,7 +30,7 @@ const Banner = () => {
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
                             <h1 className="fw-bold">Special Medical Care</h1>
-                            <p class="text-secondary">
+                            <p className="text-secondary">
                                 We ensure special care for you and your family
                                 and friends. You can get 24/7 urgent care for
                                 yourself or your children and your lovely
@@ -53,7 +53,7 @@ const Banner = () => {
                             <h1 className="fw-bold">
                                 Covid19 Information Portal
                             </h1>
-                            <p class="text-secondary">
+                            <p className="text-secondary">
                                 Get update about covid information everyday.
                                 Consult Covid Specialist from available doctors.
                             </p>

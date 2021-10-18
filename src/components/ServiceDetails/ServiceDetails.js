@@ -4,11 +4,11 @@ import { Link, useParams } from "react-router-dom";
 import useServices from "../../hook/useServices";
 
 const ServiceDetails = () => {
-    const [services, setServices] = useServices();
+    const [services] = useServices();
 
     const { id } = useParams();
 
-    const service = services.find((sv) => sv.id == id);
+    const service = services.find((sv) => sv.id === id.toString());
 
     return (
         <Container>
