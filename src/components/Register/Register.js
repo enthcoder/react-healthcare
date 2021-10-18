@@ -18,10 +18,11 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = (data, e) => {
-        console.log(data);
+        //console.log(data);
         if (data.Password.length < 6)
             setError("Password should be at least 6 characters long!");
         else {
+            setError("");
             handleRegister(data.Name, data.Email, data.Password);
             e.target.reset();
         }

@@ -20,7 +20,7 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = (data, e) => {
-        console.log(data);
+        //console.log(data);
         handleLoginUsingEmailPassword(data.Email, data.Password);
         if (!error.length) e.target.reset();
     };
