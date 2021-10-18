@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import helpImg from "../../images/img/need-help.svg";
 const Help = () => {
     const [show, setShow] = useState(false);
@@ -8,11 +8,11 @@ const Help = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <div class="container">
-            <div class="text-center mt-5">
+        <Container>
+            <div className="mt-5 text-center">
                 <h1 className="fw-bold">Need Help!</h1>
-                <hr class="w-25 mx-auto" />
-                <p class="text-secondary w-75 mx-auto my-3">
+                <hr className="mx-auto w-25" />
+                <p className="mx-auto my-3 text-secondary w-75">
                     <small>
                         Protect yourself and others around you by knowing the
                         facts and taking appropriate precautions. Floow advice
@@ -34,54 +34,34 @@ const Help = () => {
                         <Modal.Title>Ask for help!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <form class="covid-contact">
-                            <div class="mb-3">
+                        <form className="covid-contact">
+                            <div className="mb-3">
                                 <input
                                     type="text"
-                                    class="
-                                                        form-control
-                                                        border-0
-                                                        bg-light
-                                                        rounded-3
-                                                    "
+                                    className="border-0 form-control bg-light rounded-3"
                                     id="recipient-name"
                                     placeholder="Name"
                                 />
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <input
                                     type="text"
-                                    class="
-                                                        form-control
-                                                        border-0
-                                                        bg-light
-                                                        rounded-3
-                                                    "
+                                    className="border-0 form-control bg-light rounded-3"
                                     id="recipient-phone"
                                     placeholder="Phone"
                                 />
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <input
                                     type="text"
-                                    class="
-                                                        form-control
-                                                        border-0
-                                                        bg-light
-                                                        rounded-3
-                                                    "
+                                    className="border-0 form-control bg-light rounded-3"
                                     id="recipient-symptoms"
                                     placeholder="Symptoms"
                                 />
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <textarea
-                                    class="
-                                                        form-control
-                                                        border-0
-                                                        bg-light
-                                                        rounded-3
-                                                    "
+                                    className="border-0 form-control bg-light rounded-3"
                                     id="message-text"
                                     placeholder="Message in details"
                                 ></textarea>
@@ -98,7 +78,7 @@ const Help = () => {
                     </Modal.Footer>
                 </Modal>
             </div>
-        </div>
+        </Container>
     );
 };
 
