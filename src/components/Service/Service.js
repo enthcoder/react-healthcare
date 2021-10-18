@@ -1,3 +1,5 @@
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -15,7 +17,10 @@ const Service = ({ service }) => {
                 </Card.Body>
                 <Card.Footer>
                     <Link to={`/details/${service.id}`}>
-                        <Button variant="dark">Read More</Button>
+                        <Button variant="dark">
+                            Read More{" "}
+                            <FontAwesomeIcon icon={faArrowAltCircleRight} />{" "}
+                        </Button>
                     </Link>
                 </Card.Footer>
             </Card>

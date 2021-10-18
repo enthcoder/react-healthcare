@@ -1,3 +1,5 @@
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
 import helpImg from "../../images/img/need-help.svg";
@@ -25,7 +27,8 @@ const Help = () => {
 
                 <div className="my-3">
                     <Button variant="primary" onClick={handleShow}>
-                        Contact us
+                        Contact us{" "}
+                        <FontAwesomeIcon icon={faArrowAltCircleRight} />
                     </Button>
                 </div>
 
@@ -73,7 +76,8 @@ const Help = () => {
                             Close
                         </Button>
                         <Button variant="primary" onClick={handleClose}>
-                            Send Message
+                            Send Message{" "}
+                            <FontAwesomeIcon icon={faArrowAltCircleRight} />
                         </Button>
                     </Modal.Footer>
                 </Modal>
