@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect";
 const Banner = () => {
     return (
         <Container className="my-3 rounded-3 bg-light">
-            <Carousel interval={5000}>
+            <Carousel interval={4000}>
                 <Carousel.Item>
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
