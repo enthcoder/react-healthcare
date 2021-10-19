@@ -29,14 +29,24 @@ const Header = () => {
                         <Nav.Link as={NavLink} to="/home">
                             Home
                         </Nav.Link>
-
                         <Nav.Link as={NavLink} to="/covid">
                             Covid Portal
                         </Nav.Link>
-
                         <Nav.Link as={NavLink} to="/about">
                             About Us
                         </Nav.Link>
+                        {user.displayName && (
+                            <Navbar.Text>
+                                <span>{user?.displayName} </span>
+                                <img
+                                    className="rounded-circle"
+                                    src={user.photoURL}
+                                    alt=""
+                                    width="30"
+                                    height="30"
+                                />
+                            </Navbar.Text>
+                        )}
 
                         {!user.displayName ? (
                             <Nav.Link as={NavLink} to="/login">
@@ -50,24 +60,10 @@ const Header = () => {
                                 Logout
                             </button>
                         )}
-
                         {!user.email && (
                             <Nav.Link as={NavLink} to="/register">
                                 Register
                             </Nav.Link>
-                        )}
-
-                        {user.displayName && (
-                            <Navbar.Text>
-                                <span>{user?.displayName} </span>
-                                <img
-                                    className="rounded-circle"
-                                    src={user.photoURL}
-                                    alt=""
-                                    width="30"
-                                    height="30"
-                                />
-                            </Navbar.Text>
                         )}
                     </Nav>
                 </Navbar.Collapse>

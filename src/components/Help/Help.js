@@ -22,7 +22,7 @@ const Help = () => {
                     </small>
                 </p>
                 <div>
-                    <img src={helpImg} alt="" />
+                    <img src={helpImg} alt="" className="w-50" />
                 </div>
 
                 <div className="my-3">
