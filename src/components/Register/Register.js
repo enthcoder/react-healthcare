@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faLock, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -18,14 +18,9 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = (data, e) => {
-        //console.log(data);
-        if (data.Password.length < 6)
-            setError("Password should be at least 6 characters long!");
-        else {
-            setError("");
-            handleRegister(data.Name, data.Email, data.Password);
-            e.target.reset();
-        }
+        // console.log(data);
+        handleRegister(data.Name, data.Email, data.Password);
+        e.target.reset();
     };
 
     return (
@@ -59,15 +54,18 @@ const Register = () => {
                             <input
                                 {...register("Email", {
                                     required: true,
+                                    pattern:
+                                        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                                 })}
                                 className="input-field bg-light w-75"
                                 placeholder="Email"
                             />
                         </InputGroup>
                         {errors.Email && (
-                            <span className="ps-3 text-danger">
-                                Email is required!
-                            </span>
+                            <div className="ps-4 text-danger">
+                                Email is required! <br /> Put a valid email
+                                address!
+                            </div>
                         )}
 
                         <InputGroup className="mb-3">
@@ -78,25 +76,32 @@ const Register = () => {
                                 type="password"
                                 {...register("Password", {
                                     required: true,
+                                    pattern:
+                                        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                                 })}
                                 className="input-field bg-light w-75"
                                 placeholder="Password"
                             />
                         </InputGroup>
                         {errors.Password && (
-                            <span className="text-danger ps-3">
-                                Password is required!
-                            </span>
+                            <div className="text-danger ps-4">
+                                Password is required! <br /> (Minimum eight
+                                characters, at least one digit, one uppercase,
+                                one lowercase and one special character!)
+                            </div>
                         )}
+
                         <p className="ps-2">
                             Already have an account?{" "}
                             <Link to="/login">Go to Login Page</Link>
                         </p>
                         <span className="text-danger">{error}</span>
                         <div className="mt-2 d-flex justify-content-center">
-                            <button className="px-5 btn btn-primary">
-                                Register
-                            </button>
+                            <input
+                                type="submit"
+                                value="Register"
+                                className="px-5 btn btn-primary"
+                            />
                         </div>
                     </form>
 
