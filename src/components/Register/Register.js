@@ -29,8 +29,8 @@ const Register = () => {
     };
 
     return (
-        <Row className="align-items-center g-0">
-            <Col className="d-flex justify-content-center">
+        <Row className="align-items-center g-0 p-3">
+            <Col className="d-flex justify-content-center order-1 order-sm-0">
                 <div className="p-5 rounded shadow bg-light">
                     <div className="p-2 mb-3 text-center text-white fs-1">
                         <span className="p-3 rounded-circle alert-primary">
@@ -118,7 +118,7 @@ const Register = () => {
                     </div>
                 </div>
             </Col>
-            <Col>
+            <Col xs={12} md={6} className="order-0 order-sm-1">
                 <div>
                     <img src={registerImg} alt="" className="w-100" />
                 </div>
