@@ -80,6 +80,7 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                setError("");
             } else {
                 setUser({});
             }

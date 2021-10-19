@@ -22,7 +22,7 @@ const Login = () => {
     const onSubmit = (data, e) => {
         //console.log(data);
         handleLoginUsingEmailPassword(data.Email, data.Password);
-        if (!error.length) e.target.reset();
+        e.target.reset();
     };
 
     return (

@@ -9,7 +9,7 @@ import useAuth from "../../hook/useAuth";
 import registerImg from "../../images/register-pana.svg";
 
 const Register = () => {
-    const { error, setError, handleRegister, handleGoogleSignIn } = useAuth();
+    const { error, handleRegister, handleGoogleSignIn } = useAuth();
 
     const {
         register,
