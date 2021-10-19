@@ -16,10 +16,10 @@ const ServiceDetails = () => {
         <Container>
             <Card className="m-3 text-center">
                 <Row className="align-items-center">
-                    <Col>
+                    <Col xs={12} md={6}>
                         <Card.Img src={service?.img} />
                     </Col>
-                    <Col>
+                    <Col xs={12} md={6} className="p-2">
                         <Card.Body>
                             <Card.Title className="fw-bold">
                                 {service?.name}
