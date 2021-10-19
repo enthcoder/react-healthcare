@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faLock, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -9,7 +9,16 @@ import useAuth from "../../hook/useAuth";
 import registerImg from "../../images/register-pana.svg";
 
 const Register = () => {
-    const { error, handleRegister, handleGoogleSignIn } = useAuth();
+    const { error, setError, handleRegister, handleGoogleSignIn } = useAuth();
+
+    const [errorMsg, setErrorMsg] = useState("");
+    useEffect(() => {
+        setErrorMsg(error);
+        const timer = setTimeout(() => {
+            setErrorMsg("");
+            return () => clearTimeout(timer);
+        }, 3000);
+    }, [error]);
 
     const {
         register,
@@ -95,7 +104,7 @@ const Register = () => {
                             Already have an account?{" "}
                             <Link to="/login">Go to Login Page</Link>
                         </p>
-                        <span className="text-danger">{error}</span>
+                        <span className="text-danger">{errorMsg}</span>
                         <div className="mt-2 d-flex justify-content-center">
                             <input
                                 type="submit"

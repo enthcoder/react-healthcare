@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faLock, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -12,6 +12,15 @@ import "./Login.css";
 const Login = () => {
     const { error, handleLoginUsingEmailPassword, handleGoogleSignIn } =
         useAuth();
+
+    const [errorMsg, setErrorMsg] = useState("");
+    useEffect(() => {
+        setErrorMsg(error);
+        const timer = setTimeout(() => {
+            setErrorMsg("");
+            return () => clearTimeout(timer);
+        }, 3000);
+    }, [error]);
 
     const {
         register,
@@ -81,7 +90,7 @@ const Login = () => {
                             New User?{" "}
                             <Link to="/register">Create an Account</Link>
                         </p>
-                        <span className="text-danger">{error}</span>
+                        <span className="text-danger">{errorMsg}</span>
                         <div className="mt-2 d-flex justify-content-center">
                             <button className="px-5 btn btn-primary">
                                 Login
