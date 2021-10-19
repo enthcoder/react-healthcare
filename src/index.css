@@ -3,7 +3,7 @@ body {
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif; */
-    font-family: "Poppins", sans-serif;
+    font-family: "Volkhov", sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -12,6 +12,7 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+
 /* google foonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
@@ -27,7 +28,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     font-family: "Volkhov";
 }
 h1 {
