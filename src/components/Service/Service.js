@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./Service.css";
 
 const Service = ({ service }) => {
     return (
-        <Col>
+        <Col className="service-card">
             <Card className="border-0 shadow h-100">
                 <Card.Img variant="top" src={service.img} height="180" />
                 <Card.Body className="p-2">
