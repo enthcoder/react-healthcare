@@ -6,7 +6,7 @@ import brandLogo from "../../images/brand-logo.png";
 
 const Header = () => {
     const { user, handleSignOut } = useAuth();
-    console.log(user);
+    // console.log(user);
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

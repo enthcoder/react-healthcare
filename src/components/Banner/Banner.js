@@ -3,14 +3,28 @@ import { Carousel, Container } from "react-bootstrap";
 import slideImg1 from "../../images/Carousel/undraw_doctors.svg";
 import slideImg2 from "../../images/Carousel/undraw_monitoring.svg";
 import slideImg3 from "../../images/Carousel/undraw_Online_information.svg";
+import Typewriter from "typewriter-effect";
 const Banner = () => {
     return (
         <Container className="my-3 rounded-3 bg-light">
-            <Carousel>
+            <Carousel interval={5000}>
                 <Carousel.Item>
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
-                            <h1 className="fw-bold">Discover Top Doctors</h1>
+                            <h1 className="fw-bold">
+                                <Typewriter
+                                    onInit={(typewriter) => {
+                                        typewriter
+
+                                            .typeString("Top")
+
+                                            .pauseFor(500)
+                                            .deleteAll()
+                                            .typeString("Discover Top Doctors")
+                                            .start();
+                                    }}
+                                />
+                            </h1>
                             <p className="text-secondary">
                                 Choose your doctor from thousands of specialist,
                                 general, and trusted hospitals.
@@ -29,7 +43,20 @@ const Banner = () => {
                 <Carousel.Item>
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
-                            <h1 className="fw-bold">Special Medical Care</h1>
+                            <h1 className="fw-bold">
+                                <Typewriter
+                                    onInit={(typewriter) => {
+                                        typewriter
+
+                                            .typeString("Medical")
+
+                                            .pauseFor(500)
+                                            .deleteAll()
+                                            .typeString("Special Medical Care")
+                                            .start();
+                                    }}
+                                />
+                            </h1>
                             <p className="text-secondary">
                                 We ensure special care for you and your family
                                 and friends. You can get 24/7 urgent care for
@@ -51,7 +78,20 @@ const Banner = () => {
                     <div className="m-3 row align-items-center">
                         <div className="col-12 col-md-6">
                             <h1 className="fw-bold">
-                                Covid19 Information Portal
+                                <Typewriter
+                                    onInit={(typewriter) => {
+                                        typewriter
+
+                                            .typeString("Information")
+
+                                            .pauseFor(500)
+                                            .deleteAll()
+                                            .typeString(
+                                                "Covid19 Information Portal"
+                                            )
+                                            .start();
+                                    }}
+                                />
                             </h1>
                             <p className="text-secondary">
                                 Get update about covid information everyday.
