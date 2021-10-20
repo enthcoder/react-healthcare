@@ -12,6 +12,19 @@ import {
 import { useEffect, useState } from "react";
 import initializeFirebaseApp from "../Firebase/firebase.init";
 
+import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content";
+
+// const MySwal = withReactContent(Swal);
+
+const alertRegister = () => {
+    Swal.fire("Success!", "Registered Successfully!", "success");
+};
+
+const alertLogin = () => {
+    Swal.fire("Success!", "Logged in Successfully!", "success");
+};
+
 initializeFirebaseApp();
 
 const useFirebase = () => {
@@ -28,6 +41,8 @@ const useFirebase = () => {
                 setUser(result.user);
                 setError("");
                 updateInfo(name);
+                handleSignOut();
+                alertRegister();
             })
             .catch((error) => {
                 setError(error.message);
@@ -51,6 +66,7 @@ const useFirebase = () => {
             .then((result) => {
                 setUser(result.user);
                 setError("");
+                alertLogin();
             })
             .catch((error) => {
                 setError(error.message);
@@ -67,6 +83,7 @@ const useFirebase = () => {
             .then((result) => {
                 setUser(result.user);
                 setError("");
+                alertLogin();
             })
             .catch((error) => {
                 setError(error.message);

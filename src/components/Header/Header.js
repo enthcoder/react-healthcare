@@ -35,7 +35,7 @@ const Header = () => {
                         <Nav.Link as={NavLink} to="/about">
                             About Us
                         </Nav.Link>
-                        {user.displayName && (
+                        {user.email && (
                             <Navbar.Text>
                                 <span>{user?.displayName} </span>
                                 <img
@@ -48,7 +48,7 @@ const Header = () => {
                             </Navbar.Text>
                         )}
 
-                        {!user.displayName ? (
+                        {!user.email ? (
                             <Nav.Link as={NavLink} to="/login">
                                 Login
                             </Nav.Link>
