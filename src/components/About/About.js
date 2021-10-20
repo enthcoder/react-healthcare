@@ -1,4 +1,4 @@
-import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -23,8 +23,7 @@ const About = () => {
                     </p>
                     <Link to="/home">
                         <Button>
-                            Back to Home{" "}
-                            <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                            Back to Home <FontAwesomeIcon icon={faHome} />
                         </Button>
                     </Link>
                 </Col>

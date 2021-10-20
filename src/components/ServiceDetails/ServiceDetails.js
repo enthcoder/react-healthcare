@@ -1,4 +1,4 @@
-import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
@@ -30,8 +30,7 @@ const ServiceDetails = () => {
                         </Card.Body>
                         <Link to="/home">
                             <Button variant="dark">
-                                Back to Home{" "}
-                                <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                                Back to Home <FontAwesomeIcon icon={faHome} />
                             </Button>
                         </Link>
                     </Col>
