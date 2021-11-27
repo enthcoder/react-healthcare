@@ -31,15 +31,16 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const handleRegister = (name, email, password) => {
+    const handleRegister = (name, email, password, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
                 setError("");
                 updateInfo(name);
-                handleSignOut();
                 alertRegister();
+                setUser({ displayName: name, email: email });
+                history.push("/");
             })
             .catch((error) => {
                 setError(error.message);
