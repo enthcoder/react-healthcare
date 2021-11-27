@@ -1,4 +1,4 @@
-# Medicure
+# Medicare
 
 Live Preview [Medicure React App](https://medicare-react.web.app/)
 
@@ -8,8 +8,8 @@ This Project is focused on providing healthcare facilities to doctors and patien
 
 ## Project Features
 
--   Search Doctors
--   Reports Feedback
+-   Providing different services to users like Free consultation, Reports feedback, Donors community, etc.
 -   Covid Portal
 -   Covid News Update
--   Contact Us
+-   Firebase Authentication with Email/Password as well as Google sign-in method.
+-   Contact Form is provided from where a user can contact us for any kind of help related to health.

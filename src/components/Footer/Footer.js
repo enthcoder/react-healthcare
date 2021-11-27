@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="pt-5 mx-auto row row-cols-1 row-cols-md-4 row-cols-lg-4">
                     <div className="col">
                         <img src={brandLogo} alt="" width="30" height="30" />
-                        <span className="fw-bold"> Medicure</span>
+                        <span className="fw-bold"> Medicare</span>
                         <p className="mt-2">
                             <small>
                                 Medicure provides progressive, and affordable
@@ -70,7 +70,7 @@ const Footer = () => {
                     </div>
                     <p className="mb-0 text-center">
                         <small>
-                            All rights reserved ©Medicure,2021|Pranta Pal
+                            All rights reserved ©Medicare,2021|Pranta Pal
                         </small>
                     </p>
                 </div>

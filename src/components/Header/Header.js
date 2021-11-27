@@ -19,7 +19,7 @@ const Header = () => {
                         height="30"
                         className="align-top d-inline-block"
                     />
-                    <span className="fw-bold"> Medicure</span>
+                    <span className="fw-bold"> Medicare</span>
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
