@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 import loginImg from "../../images/Mobile login-rafiki.svg";
 import "./Login.css";
@@ -28,9 +28,17 @@ const Login = () => {
         formState: { errors },
     } = useForm();
 
+    const location = useLocation();
+    const history = useHistory();
+
     const onSubmit = (data, e) => {
         //console.log(data);
-        handleLoginUsingEmailPassword(data.Email, data.Password);
+        handleLoginUsingEmailPassword(
+            data.Email,
+            data.Password,
+            location,
+            history
+        );
         e.target.reset();
     };
 
@@ -100,7 +108,9 @@ const Login = () => {
                     <div className="mt-3 text-center">
                         <p>Or Sign In Using</p>
                         <img
-                            onClick={handleGoogleSignIn}
+                            onClick={() =>
+                                handleGoogleSignIn(location, history)
+                            }
                             src="https://i.ibb.co/d7hrH3F/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
                             alt=""
                             width="30"

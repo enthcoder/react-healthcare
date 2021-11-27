@@ -13,9 +13,6 @@ import { useEffect, useState } from "react";
 import initializeFirebaseApp from "../Firebase/firebase.init";
 
 import Swal from "sweetalert2";
-// import withReactContent from "sweetalert2-react-content";
-
-// const MySwal = withReactContent(Swal);
 
 const alertRegister = () => {
     Swal.fire("Success!", "Registered Successfully!", "success");
@@ -60,13 +57,19 @@ const useFirebase = () => {
         });
     };
 
-    const handleLoginUsingEmailPassword = (email, password) => {
+    const handleLoginUsingEmailPassword = (
+        email,
+        password,
+        location,
+        history
+    ) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
                 setError("");
                 alertLogin();
+                history.push(location?.state?.from);
             })
             .catch((error) => {
                 setError(error.message);
@@ -77,13 +80,14 @@ const useFirebase = () => {
     };
 
     const googleProvider = new GoogleAuthProvider();
-    const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
                 setError("");
                 alertLogin();
+                history.push(location?.state?.from);
             })
             .catch((error) => {
                 setError(error.message);
