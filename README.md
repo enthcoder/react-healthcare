@@ -1,6 +1,6 @@
 # Medicare
 
-Live Preview [Medicure React App](https://medicare-react.web.app/)
+Live Preview [Medicare React App](https://medicare-react.web.app/)
 
 ## Project Description
 
