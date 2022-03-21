@@ -14,8 +14,7 @@ const CovidPortal = () => {
             method: "GET",
             headers: {
                 "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
-                "x-rapidapi-key":
-                    "a6c4d3b95cmsh9785bfec94cc0dbp1c63dejsn1bc770ceab86",
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
             },
         })
             .then((res) => res.json())
