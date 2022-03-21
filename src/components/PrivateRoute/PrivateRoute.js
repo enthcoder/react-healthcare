@@ -20,7 +20,7 @@ const PrivateRoute = ({ children }) => {
     if (!user.email) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     } else if (!user.emailVerified) {
-        Swal.fire("Alert!", "Email not verified!", "warning");
+        Swal.fire("Alert!", "Your email is not verified!", "warning");
         return <Navigate to="/" />;
     } else {
         return children;

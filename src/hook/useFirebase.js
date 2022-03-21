@@ -32,7 +32,7 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const handleRegister = (name, email, password, history) => {
+    const handleRegister = (name, email, password, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -42,7 +42,7 @@ const useFirebase = () => {
                 alertRegister();
                 verifyEmail();
                 setUser({ displayName: name, email: email });
-                history.push("/");
+                navigate("/");
             })
             .catch((error) => {
                 setError(error.message);
@@ -64,7 +64,7 @@ const useFirebase = () => {
         sendEmailVerification(auth.currentUser).then(() => {
             Swal.fire(
                 "Alert!",
-                "Email verification sent! Verify Your Email!",
+                "Email verification sent! Verify your email please!",
                 "warning"
             );
         });
@@ -74,7 +74,7 @@ const useFirebase = () => {
         email,
         password,
         location,
-        history
+        navigate
     ) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -82,7 +82,7 @@ const useFirebase = () => {
                 setUser(result.user);
                 setError("");
                 alertLogin();
-                history.push(location?.state?.from || "/");
+                navigate(location?.state?.from || "/");
             })
             .catch((error) => {
                 setError(error.message);
@@ -93,7 +93,7 @@ const useFirebase = () => {
     };
 
     const googleProvider = new GoogleAuthProvider();
-    const handleGoogleSignIn = (location, history) => {
+    const handleGoogleSignIn = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -101,7 +101,7 @@ const useFirebase = () => {
                 setUser(result.user);
                 setError("");
                 alertLogin();
-                history.push(location?.state?.from || "/");
+                navigate(location?.state?.from || "/");
             })
             .catch((error) => {
                 setError(error.message);
@@ -141,8 +141,8 @@ const useFirebase = () => {
     return {
         user,
         error,
-        setError,
         isLoading,
+        setError,
         handleRegister,
         updateInfo,
         handleLoginUsingEmailPassword,
