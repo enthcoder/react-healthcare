@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 import registerImg from "../../images/register-pana.svg";
 
@@ -26,11 +26,11 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const onSubmit = (data, e) => {
         // console.log(data);
-        handleRegister(data.Name, data.Email, data.Password, history);
+        handleRegister(data.Name, data.Email, data.Password, navigate);
         e.target.reset();
     };
 

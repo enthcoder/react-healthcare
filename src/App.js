@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import CovidPortal from "./components/CovidPortal/CovidPortal";
 import Footer from "./components/Footer/Footer";
@@ -17,32 +17,31 @@ function App() {
         <AuthProvider>
             <Router>
                 <Header></Header>
-                <Switch>
-                    <Route exact path="/">
-                        <Home></Home>
-                    </Route>
-                    <Route exact path="/home">
-                        <Home></Home>
-                    </Route>
-                    <PrivateRoute path="/details/:id">
-                        <ServiceDetails></ServiceDetails>
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/covid">
-                        <CovidPortal></CovidPortal>
-                    </PrivateRoute>
-                    <PrivateRoute exact path="/about">
-                        <About></About>
-                    </PrivateRoute>
-                    <Route exact path="/login">
-                        <Login></Login>
-                    </Route>
-                    <Route exact path="/register">
-                        <Register></Register>
-                    </Route>
-                    <Route path="*">
-                        <NotFound></NotFound>
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Home></Home>} />
+                    <Route path="/home" element={<Home></Home>} />
+                    <Route
+                        path="/details/:id"
+                        element={
+                            <PrivateRoute>
+                                <ServiceDetails></ServiceDetails>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/covid"
+                        element={
+                            <PrivateRoute>
+                                <CovidPortal></CovidPortal>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route path="/about" element={<About></About>} />
+                    <Route exact path="/login" element={<Login></Login>} />
+
+                    <Route path="/register" element={<Register></Register>} />
+                    <Route path="*" element={<NotFound></NotFound>} />
+                </Routes>
                 <Footer></Footer>
             </Router>
         </AuthProvider>
