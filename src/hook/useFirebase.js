@@ -7,6 +7,7 @@ import {
     signInWithPopup,
     signOut,
     updateProfile,
+    sendEmailVerification,
 } from "firebase/auth";
 
 import { useEffect, useState } from "react";
@@ -39,6 +40,7 @@ const useFirebase = () => {
                 setError("");
                 updateInfo(name);
                 alertRegister();
+                verifyEmail();
                 setUser({ displayName: name, email: email });
                 history.push("/");
             })
@@ -58,6 +60,16 @@ const useFirebase = () => {
         });
     };
 
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser).then(() => {
+            Swal.fire(
+                "Alert!",
+                "Email verification sent! Verify Your Email!",
+                "warning"
+            );
+        });
+    };
+
     const handleLoginUsingEmailPassword = (
         email,
         password,
@@ -70,7 +82,7 @@ const useFirebase = () => {
                 setUser(result.user);
                 setError("");
                 alertLogin();
-                history.push(location?.state?.from);
+                history.push(location?.state?.from || "/");
             })
             .catch((error) => {
                 setError(error.message);
@@ -85,10 +97,11 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
+                // console.log(result.user);
                 setUser(result.user);
                 setError("");
                 alertLogin();
-                history.push(location?.state?.from);
+                history.push(location?.state?.from || "/");
             })
             .catch((error) => {
                 setError(error.message);

@@ -96,7 +96,12 @@ const Login = () => {
                         </span>
                         <p className="ps-2">
                             New User?{" "}
-                            <Link to="/register">Create an Account</Link>
+                            <Link
+                                to="/register"
+                                style={{ textDecoration: "none" }}
+                            >
+                                Create an Account
+                            </Link>
                         </p>
                         <span className="text-danger">{errorMsg}</span>
                         <div className="mt-2 d-flex justify-content-center">

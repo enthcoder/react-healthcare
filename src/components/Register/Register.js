@@ -104,7 +104,12 @@ const Register = () => {
 
                         <p className="ps-2">
                             Already have an account?{" "}
-                            <Link to="/login">Go to Login Page</Link>
+                            <Link
+                                to="/login"
+                                style={{ textDecoration: "none" }}
+                            >
+                                Go to Login Page
+                            </Link>
                         </p>
                         <span className="text-danger">{errorMsg}</span>
                         <div className="mt-2 d-flex justify-content-center">

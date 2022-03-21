@@ -1,6 +1,7 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router";
+import Swal from "sweetalert2";
 import useAuth from "../../hook/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
@@ -15,12 +16,22 @@ const PrivateRoute = ({ children, ...rest }) => {
             </div>
         );
 
+    if (user.email && !user.emailVerified) {
+        Swal.fire("Alert!", "Email not verified!", "warning");
+    }
+
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                user.email ? (
+                user.email && user.emailVerified ? (
                     children
+                ) : user.email ? (
+                    <Redirect
+                        to={{
+                            pathname: "/",
+                        }}
+                    />
                 ) : (
                     <Redirect
                         to={{
