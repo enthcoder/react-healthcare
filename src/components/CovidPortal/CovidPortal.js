@@ -2,14 +2,25 @@ import React, { useEffect, useState } from "react";
 import portalImg from "../../images/undraw_medicine.svg";
 import bdFlag from "../../images/bangladesh-flag.jpg";
 import "./CovidPortal.css";
+import { Spinner } from "react-bootstrap";
 
 const CovidPortal = () => {
     const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://covid-api.mmediagroup.fr/v1/cases?country=Bangladesh")
+        setLoading(true);
+        fetch("https://covid-19-statistics.p.rapidapi.com/reports?iso=BGD", {
+            method: "GET",
+            headers: {
+                "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
+                "x-rapidapi-key":
+                    "a6c4d3b95cmsh9785bfec94cc0dbp1c63dejsn1bc770ceab86",
+            },
+        })
             .then((res) => res.json())
-            .then((data) => setData(data.All));
+            .then((data) => setData(data.data[0]))
+            .finally(() => setLoading(false));
     }, []);
 
     return (
@@ -45,7 +56,22 @@ const CovidPortal = () => {
                                 >
                                     <div style={{ color: "maroon" }}>
                                         <h3>Confirmed</h3>
-                                        <p id="confirmed">{data?.confirmed}</p>
+                                        {loading ? (
+                                            <div className="text-center">
+                                                <Spinner
+                                                    animation="border"
+                                                    role="status"
+                                                >
+                                                    <span className="visually-hidden">
+                                                        Loading...
+                                                    </span>
+                                                </Spinner>
+                                            </div>
+                                        ) : (
+                                            <p id="confirmed">
+                                                {data.confirmed}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +82,20 @@ const CovidPortal = () => {
                                 >
                                     <div style={{ color: "blue" }}>
                                         <h3>Active</h3>
-                                        <p>151,846</p>
+                                        {loading ? (
+                                            <div className="text-center">
+                                                <Spinner
+                                                    animation="border"
+                                                    role="status"
+                                                >
+                                                    <span className="visually-hidden">
+                                                        Loading...
+                                                    </span>
+                                                </Spinner>
+                                            </div>
+                                        ) : (
+                                            <p>{data?.active_diff}</p>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +108,24 @@ const CovidPortal = () => {
                                 >
                                     <div style={{ color: "green" }}>
                                         <h3>Recovered</h3>
-                                        <p>{data?.confirmed - data?.deaths}</p>
+                                        {loading ? (
+                                            <div className="text-center">
+                                                <Spinner
+                                                    animation="border"
+                                                    role="status"
+                                                >
+                                                    <span className="visually-hidden">
+                                                        Loading...
+                                                    </span>
+                                                </Spinner>
+                                            </div>
+                                        ) : (
+                                            <p>
+                                                {data.confirmed -
+                                                    data.deaths -
+                                                    data.active_diff}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +137,20 @@ const CovidPortal = () => {
                                     }}
                                 >
                                     <h3>Deceased</h3>
-                                    <p>{data?.deaths}</p>
+                                    {loading ? (
+                                        <div className="text-center">
+                                            <Spinner
+                                                animation="border"
+                                                role="status"
+                                            >
+                                                <span className="visually-hidden">
+                                                    Loading...
+                                                </span>
+                                            </Spinner>
+                                        </div>
+                                    ) : (
+                                        <p>{data.deaths}</p>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -89,10 +158,10 @@ const CovidPortal = () => {
                             <img src={bdFlag} alt="" width="50" height="50" />
                             <span className="text-success">
                                 {" "}
-                                {data.country}
+                                {data?.region?.name}
                             </span>{" "}
                             | Updated:
-                            <span>{data?.updated}</span>
+                            <span>{data?.last_update}</span>
                         </h5>
                     </div>
                 </div>
