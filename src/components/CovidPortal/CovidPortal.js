@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import portalImg from "../../images/undraw_medicine.svg";
 import bdFlag from "../../images/bangladesh-flag.jpg";
-import "./CovidPortal.css";
 import { Spinner } from "react-bootstrap";
+import "./CovidPortal.css";
 
 const CovidPortal = () => {
     const [data, setData] = useState({});
@@ -14,11 +14,11 @@ const CovidPortal = () => {
             method: "GET",
             headers: {
                 "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
-                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+                "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
             },
         })
             .then((res) => res.json())
-            .then((data) => setData(data.data[0]))
+            .then((data) => setData(data?.data[0]))
             .finally(() => setLoading(false));
     }, []);
 
