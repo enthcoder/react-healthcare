@@ -41,7 +41,7 @@ const NavigationHome = () => {
                                 <Nav.Link as={NavLink} to="/doctors">
                                     <small>Find a doctor</small>
                                 </Nav.Link>
-                                <Nav.Link as={NavLink} to="/blood_donors">
+                                <Nav.Link as={NavLink} to="/bd_portal">
                                     <small>Blood Donors</small>
                                 </Nav.Link>
                                 <Nav.Link as={NavLink} to="/covid_portal">
