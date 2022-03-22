@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 import brandLogo from "../../images/brand-logo.png";
+import { HashLink } from "react-router-hash-link";
 import "./NavStyles.css";
 
 const NavigationHome = () => {
@@ -46,10 +47,9 @@ const NavigationHome = () => {
                                 <Nav.Link as={NavLink} to="/covid_portal">
                                     <small>Covid Portal</small>
                                 </Nav.Link>
-                                <a className="nav-link" href="#workout">
+                                <Nav.Link as={HashLink} to="/#workout">
                                     <small>Health Tips</small>
-                                </a>
-
+                                </Nav.Link>
                                 <Nav.Link as={NavLink} to="/about">
                                     <small>About Us</small>
                                 </Nav.Link>

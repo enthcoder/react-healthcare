@@ -40,6 +40,14 @@ const Help = () => {
                         <form className="covid-contact">
                             <div className="mb-3">
                                 <input
+                                    type="email"
+                                    className="border-0 form-control bg-light rounded-3"
+                                    id="recipient-email"
+                                    placeholder="Email"
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <input
                                     type="text"
                                     className="border-0 form-control bg-light rounded-3"
                                     id="recipient-name"
