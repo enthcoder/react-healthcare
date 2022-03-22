@@ -57,7 +57,7 @@ const NavigationHome = () => {
                                 </Nav.Link>
                                 <Nav.Link
                                     as={NavLink}
-                                    to="/covid"
+                                    to="/covid_portal"
                                     className="nav-link"
                                 >
                                     <small>Covid Portal</small>
