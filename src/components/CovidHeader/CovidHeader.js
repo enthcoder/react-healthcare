@@ -22,7 +22,7 @@ const CovidHeader = () => {
             .finally(() => setLoading(false));
     }, []);
     return (
-        <div>
+        <div className="covid-header">
             <h1 className="text-center fw-bold">Covid Portal</h1>
             <hr className="mx-auto w-25" />
             <p className="text-center text-secondary">
