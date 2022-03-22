@@ -8,6 +8,6 @@
 }
 .list li:hover {
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
     color: rgb(134, 131, 131);
 }

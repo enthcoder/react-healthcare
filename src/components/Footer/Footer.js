@@ -70,7 +70,7 @@ const Footer = () => {
                     </div>
                     <p className="mb-0 text-center">
                         <small>
-                            All rights reserved ©Medicare,2021|Pranta Pal
+                            All rights reserved ©Medicare, 2021 | Pranta Pal
                         </small>
                     </p>
                 </div>

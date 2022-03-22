@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import CovidPortal from "./components/CovidPortal/CovidPortal";
 import Footer from "./components/Footer/Footer";
-// import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
@@ -16,7 +15,6 @@ function App() {
     return (
         <AuthProvider>
             <Router>
-                {/* <Header></Header> */}
                 <Routes>
                     <Route path="/" element={<Home></Home>} />
                     <Route path="/home" element={<Home></Home>} />
