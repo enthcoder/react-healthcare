@@ -1,8 +1,8 @@
 import React from "react";
 import CovidHeader from "../CovidHeader/CovidHeader";
+import CovidHelp from "../CovidHelp/CovidHelp";
 import CovidPreventions from "../CovidPreventions/CovidPreventions";
 import CovidSymptoms from "../CovidSymptoms/CovidSymptoms";
-import Help from "../Help/Help";
 import NavigationCovid from "../Navigation/NavigationCovid";
 
 const CovidPortal = () => {
@@ -12,7 +12,7 @@ const CovidPortal = () => {
             <CovidHeader></CovidHeader>
             <CovidPreventions></CovidPreventions>
             <CovidSymptoms></CovidSymptoms>
-            <Help></Help>
+            <CovidHelp></CovidHelp>
         </>
     );
 };

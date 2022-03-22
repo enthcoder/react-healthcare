@@ -2,6 +2,7 @@ import React from "react";
 import mask from "../../images/img/using-mask.svg";
 import wash from "../../images/img/hand-wash.svg";
 import distance from "../../images/img/social-distance.svg";
+import "./CovidPreventions.css";
 
 const CovidPreventions = () => {
     return (
