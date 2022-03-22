@@ -14,7 +14,7 @@ const Help = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="help-section">
+        <div className="help-section" id="help">
             <Container>
                 <div className="my-5 pt-5 text-center">
                     <h1 className="fw-bold">Need Help!</h1>

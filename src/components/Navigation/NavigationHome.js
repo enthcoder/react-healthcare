@@ -34,43 +34,23 @@ const NavigationHome = () => {
 
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ms-auto align-items-center">
-                                <Nav.Link
-                                    as={NavLink}
-                                    to="/"
-                                    className="nav-link"
-                                >
+                                <Nav.Link as={NavLink} to="/">
                                     <small>Home</small>
                                 </Nav.Link>
-                                <Nav.Link
-                                    as={NavLink}
-                                    to="/doctors"
-                                    className="nav-link"
-                                >
+                                <Nav.Link as={NavLink} to="/doctors">
                                     <small>Find a doctor</small>
                                 </Nav.Link>
-                                <Nav.Link
-                                    as={NavLink}
-                                    to="/blood_donors"
-                                    className="nav-link"
-                                >
+                                <Nav.Link as={NavLink} to="/blood_donors">
                                     <small>Blood Donors</small>
                                 </Nav.Link>
-                                <Nav.Link
-                                    as={NavLink}
-                                    to="/covid_portal"
-                                    className="nav-link"
-                                >
+                                <Nav.Link as={NavLink} to="/covid_portal">
                                     <small>Covid Portal</small>
                                 </Nav.Link>
                                 <a className="nav-link" href="#workout">
                                     <small>Health Tips</small>
                                 </a>
 
-                                <Nav.Link
-                                    as={NavLink}
-                                    to="/about"
-                                    className="nav-link"
-                                >
+                                <Nav.Link as={NavLink} to="/about">
                                     <small>About Us</small>
                                 </Nav.Link>
                                 {user.email && (
