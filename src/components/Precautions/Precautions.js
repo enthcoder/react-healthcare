@@ -29,7 +29,7 @@ const Precautions = () => {
                     "
                 >
                     <div className="section-intro col-10 col-md-6 col-lg-6">
-                        <h1>Social Distancing</h1>
+                        <h1 className="fw-bold">Social Distancing</h1>
                         <p className="text-secondary">
                             <small>
                                 Social distancing aims to decrease transmission
@@ -38,7 +38,7 @@ const Precautions = () => {
                                 and healthy individuals.
                             </small>
                         </p>
-                        <Link to="/covid">
+                        <Link to="/covid_portal">
                             <button class="button btn btn-primary mb-2">
                                 Learn More{" "}
                                 <FontAwesomeIcon icon={faArrowRight} />
@@ -68,7 +68,7 @@ const Precautions = () => {
                         />
                     </div>
                     <div className="section-intro col-10 col-md-6 col-lg-6">
-                        <h1>Wash Hands</h1>
+                        <h1 className="fw-bold">Wash Hands</h1>
                         <p className="text-secondary">
                             <small>
                                 Regularly and thoroughly clean your hands with
@@ -77,7 +77,7 @@ const Precautions = () => {
                                 viruses that may be on your hands.
                             </small>
                         </p>
-                        <Link to="/covid">
+                        <Link to="/covid_portal">
                             <button class="button btn btn-primary mb-2">
                                 Learn More{" "}
                                 <FontAwesomeIcon icon={faArrowRight} />

@@ -95,7 +95,7 @@ const OurServices = () => {
                                             reports.
                                         </small>
                                     </p>
-                                    <Link to="/reports">
+                                    <Link to="/reports_feedback">
                                         <button class="button btn btn-primary rounded-pill mb-2">
                                             Learn More
                                         </button>
@@ -120,7 +120,7 @@ const OurServices = () => {
                                             We will manage blood donors for you.
                                         </small>
                                     </p>
-                                    <Link to="/blood_donors">
+                                    <Link to="/bd_portal">
                                         <button class="button btn btn-primary rounded-pill mb-2">
                                             Learn More
                                         </button>
@@ -144,7 +144,7 @@ const OurServices = () => {
                                             from available doctors.
                                         </small>
                                     </p>
-                                    <Link to="/covid">
+                                    <Link to="/covid_portal">
                                         <button class="button btn btn-primary rounded-pill mb-2">
                                             Learn More
                                         </button>

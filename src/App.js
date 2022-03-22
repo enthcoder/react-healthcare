@@ -29,7 +29,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/covid"
+                        path="/covid_portal"
                         element={
                             <PrivateRoute>
                                 <CovidPortal></CovidPortal>
