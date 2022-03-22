@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import CovidPortal from "./components/CovidPortal/CovidPortal";
 import DoctorsPortal from "./components/DoctorsPortal/DoctorsPortal";
+import BloodDonorPortal from "./components/BloodDonorPortal/BloodDonorPortal";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -40,6 +41,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <DoctorsPortal></DoctorsPortal>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/bd_portal"
+                        element={
+                            <PrivateRoute>
+                                <BloodDonorPortal></BloodDonorPortal>
                             </PrivateRoute>
                         }
                     />
