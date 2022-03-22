@@ -1,88 +1,111 @@
 import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hook/useAuth";
 import brandLogo from "../../images/brand-logo.png";
 
 const NavigationBlood = () => {
+    const { user, handleSignOut } = useAuth();
+
     return (
         <>
-            <section className="navbar-section mb-5 pb-2">
-                <nav
-                    className="
-                        navbar
-                        fixed-top
-                        navbar-expand-lg navbar-dark
-                        bg-danger
-                    "
+            <section className="mb-5">
+                <Navbar
+                    collapseOnSelect
+                    expand="lg"
+                    bg="danger"
+                    variant="dark"
+                    fixed="top"
                 >
-                    <div className="container">
-                        <a className="navbar-brand" href="#">
+                    <Container>
+                        <Navbar.Brand as={Link} to="/">
                             <img
-                                src={brandLogo}
                                 alt=""
+                                src={brandLogo}
                                 width="30"
                                 height="30"
-                                className="d-inline-block align-text-top"
+                                className="align-top d-inline-block"
                             />
-                            <strong> Medicure</strong>
-                        </a>
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            className="collapse navbar-collapse"
-                            id="navbarSupportedContent"
-                        >
-                            <ul
-                                className="
-                                    navbar-nav
-                                    ms-auto
-                                    mb-2 mb-lg-0
-                                    text-center
-                                "
-                            >
-                                <li className="nav-item px-2">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                    >
-                                        <small>Home</small>
-                                    </a>
-                                </li>
-                                <li className="nav-item px-2">
-                                    <a className="nav-link active" href="#">
-                                        <small>All donors</small>
-                                    </a>
-                                </li>
-                                <li className="nav-item px-2">
-                                    <a className="nav-link active" href="#">
-                                        <small id="join-us">Join Us</small>
-                                    </a>
-                                </li>
-                                <li className="nav-item px-2">
-                                    <a className="nav-link active" href="#">
-                                        <small>My acount</small>
-                                    </a>
-                                </li>
-                                <li className="nav-item px-2">
-                                    <a
-                                        className="nav-link active"
-                                        href="#about"
-                                    >
-                                        <small>About Us</small>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                            <span className="fw-bold"> Medicare</span>
+                        </Navbar.Brand>
+
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="ms-auto align-items-center">
+                                <Nav.Link
+                                    as={NavLink}
+                                    to="/"
+                                    style={{ color: "white" }}
+                                >
+                                    <small>Home</small>
+                                </Nav.Link>
+                                <Nav.Link
+                                    as={NavLink}
+                                    to="/allDonors"
+                                    style={{ color: "white" }}
+                                >
+                                    <small>All Donors</small>
+                                </Nav.Link>
+
+                                <a
+                                    className="nav-link"
+                                    href="/join"
+                                    style={{ color: "white" }}
+                                >
+                                    <small>Join Us</small>
+                                </a>
+                                <a
+                                    className="nav-link"
+                                    href="/profile"
+                                    style={{ color: "white" }}
+                                >
+                                    <small>My Profile</small>
+                                </a>
+                                <a
+                                    className="nav-link"
+                                    href="#help"
+                                    style={{ color: "white" }}
+                                >
+                                    <small>Contact Us</small>
+                                </a>
+
+                                {user.email && (
+                                    <Navbar.Text>
+                                        <small style={{ color: "white" }}>
+                                            <span>{user?.displayName} </span>
+                                        </small>
+                                        <img
+                                            className="rounded-circle"
+                                            src={user.photoURL}
+                                            alt=""
+                                            width="30"
+                                            height="30"
+                                        />
+                                        <button
+                                            onClick={handleSignOut}
+                                            className="mx-1 btn btn-dark bg-danger"
+                                        >
+                                            Logout
+                                        </button>
+                                    </Navbar.Text>
+                                )}
+
+                                {!user.email && (
+                                    <Nav.Link as={NavLink} to="/login">
+                                        <small>Login</small>
+                                    </Nav.Link>
+                                )}
+
+                                {!user.email && (
+                                    <Nav.Link as={NavLink} to="/register">
+                                        <small>Register</small>
+                                    </Nav.Link>
+                                )}
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
             </section>
         </>
     );
