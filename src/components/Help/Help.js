@@ -11,7 +11,7 @@ const Help = () => {
 
     return (
         <Container>
-            <div className="mt-5 text-center">
+            <div className="my-5 pt-5 text-center">
                 <h1 className="fw-bold">Need Help!</h1>
                 <hr className="mx-auto w-25" />
                 <p className="mx-auto my-3 text-secondary w-75">

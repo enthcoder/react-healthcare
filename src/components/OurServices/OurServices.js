@@ -13,7 +13,7 @@ const OurServices = () => {
         <>
             <section class="service-section text-center mt-5" id="services">
                 <div class="container mb-4">
-                    <h1>Our Services</h1>
+                    <h1 className="fw-bold">Our Services</h1>
                     <hr class="w-25 mx-auto" />
                     <p class="text-secondary w-75 mx-auto">
                         <small>
