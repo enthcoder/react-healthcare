@@ -51,7 +51,7 @@ const NavigationBlood = () => {
                                     <a
                                         className="nav-link active"
                                         aria-current="page"
-                                        href="index.html"
+                                        href="/"
                                     >
                                         <small>Home</small>
                                     </a>
