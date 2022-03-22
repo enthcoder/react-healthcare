@@ -9,9 +9,9 @@ const BDPortalBanner = () => {
             <Carousel interval={4000}>
                 <Carousel.Item>
                     <div>
-                        <img src={img1} class="d-block w-100" alt="..." />
+                        <img src={img1} className="d-block w-100" alt="..." />
                         <Carousel.Caption>
-                            <h5 class="fs-2 fw-bold text-danger">
+                            <h5 className="fs-2 fw-bold text-danger">
                                 Blood Donation
                             </h5>
                             <p>
@@ -24,9 +24,13 @@ const BDPortalBanner = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <div>
-                        <img src={img2} class="d-block w-100 h-100" alt="..." />
+                        <img
+                            src={img2}
+                            className="d-block w-100 h-100"
+                            alt="..."
+                        />
                         <Carousel.Caption>
-                            <h5 class="fs-2 fw-bold text-danger">
+                            <h5 className="fs-2 fw-bold text-danger">
                                 Donate Blood & Save Life
                             </h5>
                             <p>

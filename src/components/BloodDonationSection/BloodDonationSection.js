@@ -39,7 +39,7 @@ const BloodDonationSection = () => {
                             </small>
                         </p>
                         <Link to="/bd_portal">
-                            <button class="button btn btn-primary mb-2">
+                            <button className="button btn btn-primary mb-2">
                                 Learn More{" "}
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </button>
