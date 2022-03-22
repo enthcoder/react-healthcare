@@ -4,6 +4,7 @@ import EverydayWorkouts from "../EverydayWorkouts/EverydayWorkouts";
 import Help from "../Help/Help";
 import NavigationHome from "../Navigation/NavigationHome";
 import OurServices from "../OurServices/OurServices";
+import Precautions from "../Precautions/Precautions";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <NavigationHome></NavigationHome>
             <Banner></Banner>
             <OurServices></OurServices>
+            <Precautions></Precautions>
             <EverydayWorkouts></EverydayWorkouts>
             <Help></Help>
         </div>
