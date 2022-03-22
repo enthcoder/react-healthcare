@@ -1,0 +1,11 @@
+/* ---------navbar---------- */
+.nav-link {
+    color: white;
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: rgb(182, 179, 179);
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}

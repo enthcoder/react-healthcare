@@ -16,7 +16,7 @@ function App() {
     return (
         <AuthProvider>
             <Router>
-                <Header></Header>
+                {/* <Header></Header> */}
                 <Routes>
                     <Route path="/" element={<Home></Home>} />
                     <Route path="/home" element={<Home></Home>} />
