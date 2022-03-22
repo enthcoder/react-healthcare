@@ -2,10 +2,12 @@ import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
+import useAuth from "../../hook/useAuth";
 import helpImg from "../../images/img/need-help.svg";
 import "./CovidHelp.css";
 
 const Help = () => {
+    const { user } = useAuth();
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -46,7 +48,19 @@ const Help = () => {
                                         type="text"
                                         className="border-0 form-control bg-light rounded-3"
                                         id="recipient-name"
+                                        placeholder="Email"
+                                        value={user.email}
+                                        disabled
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="border-0 form-control bg-light rounded-3"
+                                        id="recipient-name"
                                         placeholder="Name"
+                                        value={user.displayName}
+                                        disabled
                                     />
                                 </div>
                                 <div className="mb-3">
